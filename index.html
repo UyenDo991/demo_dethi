@@ -112,6 +112,7 @@
             height: 80%;
             transition: .5s;
             box-shadow: 0 0 15px rgba(0, 0, 0, .5);
+            background: rgba(255, 255, 255, 1);
         }
         .photo-container:hover {
             transform: scale(1.2);
@@ -231,33 +232,25 @@
             // Giới hạn width, height = 200px
             const translateX = Math.random() * (boxWidth - 200); 
             const translateY = Math.random() * (boxHeight - 200); 
-            // Random translateZ from 0 to 200
-            //const translateZ = Math.random() * 200; 
-            let color;
-            // Randim vị trí và màu
-            const randomValue = Math.random();
-            const colorClasses = ['color1', 'color2', 'color3'];
-            const translateZValues = [50, 100, 150];
-            // 3 là số lượng phần tử trong mảng
-            const index = Math.floor(randomValue * 3); 
-            const translateZ = translateZValues[index];
-            const colorClass = colorClasses[index];
+            // Giới hạn chiều sâu -200px đến 200px
+            const translateZ = (Math.random() * 400) - 200; 
+            // Tính độ sáng dựa trên vị trí translateZ
+            const brightness = 0.1 + (1 - Math.abs(translateZ) / 200) * 0.9; // Giá trị từ 0.1 đến 1
+            photo[i].style.filter = `brightness(${brightness})`;
 
-            photo[i].classList.add(colorClass);
             photo_container[i].style.transform 
             = `translate3d(${translateX}px, ${translateY}px, ${translateZ}px)`;
             // Thêm sự kiện mouseover and mouseout
-            photo_container[i].addEventListener('mouseenter', function () {
+            photo_container[i].addEventListener('mouseover', function () {
                 //Set vị trí translateZ = 200px và scale
                 this.style.transform 
                 = `translate3d(${translateX}px, ${translateY}px, ${200}px) scale(1.2)`;
-                photo[i].style.backgroundColor = '#fff';
+                photo[i].style.filter = 'brightness(1)';
             });
-            photo_container[i].addEventListener('mouseleave', function () {
+            photo_container[i].addEventListener('mouseout', function () {
                 // Reset 
                 this.style.transform 
                 = `translate3d(${translateX}px, ${translateY}px, ${translateZ}px) scale(1)`;
-                photo[i].style.backgroundColor = '';
             });
         }
         //Modal

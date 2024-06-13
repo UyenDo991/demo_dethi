@@ -46,10 +46,10 @@ const createRandomBoxes = (count) => {
 // Gọi hàm tạo ngẫu nhiên 10 small-box
 createRandomBoxes(10);
 
-// container.addEventListener('mousemove', (e) => {
-//     const rect = container.getBoundingClientRect();
-//     const x = (e.clientX - rect.left) / rect.width - 0.5;
-//     const y = (e.clientY - rect.top) / rect.height - 0.5;
+container.addEventListener('mousemove', (e) => {
+    const rect = container.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
 
-//     box.style.transform = `rotateY(${x * 30}deg) rotateX(${-y * 30}deg)`;
-// });
+    box.style.transform = `rotateY(${x * 30}deg) rotateX(${-y * 30}deg)`;
+});
