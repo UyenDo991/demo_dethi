@@ -13,128 +13,112 @@
             background: url(public/assets/images/background.jpg);
         }
         .box-container {
-            position: relative;
-            width: 100%;
-            height: 90vh;
+            width: 70%;
+            height: 80vh;
             perspective: 1280px;
             box-shadow: 0 0 15px #e75e5e;
             margin: 50px auto;
+            position: relative;
         }
         .box {
-            position: absolute; /* Add this line */
-            width: 80%;
-            height: 80%;
-            top: 10%;
-            left: 10%;
+            position: relative;
+            /* position: absolute;  */
+            width: 100%;
+            height: 100%;
+            /* top: 10%;
+            left: 10%; */
             background: rgba(255, 255, 255, .5);
             border: 1px solid #fff;
             box-shadow: 0 0 15px #fff;
             border-radius: 20px;
-            transition: 1s;
+            transition: 1.5s;
             transform-style: preserve-3d;
         }
-        .hover {
-            position: absolute;
-            inset: 0;
-            z-index: 1;
-        }
-        .left {
+        /* .left {
             clip-path: polygon(0 33%, 0 66%, 50% 50%);
         }
+
         .right {
             clip-path: polygon(100% 33%, 100% 66%, 50% 50%);
         }
+
         .top {
             clip-path: polygon(33% 0, 66% 0, 50% 50%);
         }
+
         .bottom {
             clip-path: polygon(33% 100%, 66% 100%, 50% 50%);
         }
+
         .top-left {
             clip-path: polygon(0 0, 33% 0, 50% 50%, 0 33%);
         }
+
         .top-right {
             clip-path: polygon(100% 0, 100% 33%, 50% 50%, 66% 0);
         }
+
         .bottom-left {
             clip-path: polygon(0 100%, 0 66%, 50% 50%, 33% 100%);
         }
+
         .bottom-right {
             clip-path: polygon(100% 100%, 100% 66%, 50% 50%, 66% 100%);
         }
 
         .left:hover~.box {
-            transform: rotateY(45deg);
+            transform: rotateY(30deg);
         }
+
         .right:hover~.box {
-            transform: rotateY(-45deg);
+            transform: rotateY(-30deg);
         }
+
         .top:hover~.box {
-            transform: rotateX(-45deg);
+            transform: rotateX(-30deg);
         }
+
         .bottom:hover~.box {
-            transform: rotateX(45deg);
+            transform: rotateX(30deg);
         }
-        /*đã đóng .top-left:hover~.box {
-            transform: rotateX(-45deg) rotateY(45deg);
+
+        .top-left:hover~.box {
+            transform: rotateX(-30deg) rotateY(30deg);
         }
-    
+
         .top-right:hover~.box {
-            transform: rotateX(-45deg) rotateY(-45deg);
+            transform: rotateX(-30deg) rotateY(-30deg);
         }
+
         .bottom-right:hover~.box {
-            transform: rotateX(45deg) rotateY(-45deg);
+            transform: rotateX(30deg) rotateY(-30deg);
         }
+
         .bottom-left:hover~.box {
-            transform: rotateX(45deg) rotateY(45deg);
-        } đã đóng*/
-        /* đã đóng .logo-1 {
-            transform: translateZ(50px) scale(.9);
-         }
-        .logo-2 {
-            transform: translateZ(100px) scale(.8);
-         }
-        .logo-3 {
-            transform: translateZ(150px) scale(.7) translateY(120px);
-         } đã đóng*/
-         .photo-container {
+            transform: rotateX(30deg) rotateY(30deg);
+        } */
+        .photo-container {
             position: absolute  ;
             width: 200px;
             height: 200px;
             font-size: 3em;
             line-height: 200px;
+            transition: transform 0.3s, background-color 0.3s;
+            cursor: pointer; /* Đảm bảo con trỏ chuột thay đổi khi hover */
         }
         .photo {
             position: absolute;
             width: 100%;
             height: 80%;
-            /* background: rgb(255, 255, 255); */
-            /* font-size: 3em; */
-            /* text-align: center; */
-            /* line-height: 250px; */
             transition: .5s;
             box-shadow: 0 0 15px rgba(0, 0, 0, .5);
         }
         .photo-container:hover {
             transform: scale(1.2);
-            /* z-index: 999; */
             box-shadow: 0 0 15px #d67316;
         }
         .color-after{
             background: rgb(161, 144, 236);
-        }
-        .square{
-            position: absolute;
-            top: 80%;
-            width: 100%;
-            height: 20%;
-            /* background: rgb(241, 241, 241); */
-            padding: 5px;
-            font-size: 15px;
-            /* text-align: center; */
-            line-height: 20%;
-            transition: .5s;
-            box-shadow: 0 0 20px rgba(0, 0, 0, .3);
         }
         .color1{
             background: rgb(119, 119, 119);
@@ -149,25 +133,59 @@
 </head>
 <body>
     <div class="box-container">
-        <div class="hover left"></div>
-        <div class="hover right"></div>
-        <div class="hover top"></div>
-        <div class="hover bottom"></div>
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="top"></div>
+        <div class="bottom"></div>
+        <div class="top-left"></div>
+        <div class="top-right"></div>
+        <div class="bottom-left"></div>
+        <div class="bottom-right"></div>
         <div class="box" id="box">
             <div class="photo-container" 
                 data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <div class="photo">1</div>
-                <div class="square"><i class="bi bi-heart"></i></div>
+                <!-- <div class="square"><i class="bi bi-heart"></i></div> -->
             </div>
             <div class="photo-container" 
                 data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <div class="photo">1</div>
-                <div class="square"><i class="bi bi-heart"></i></div>
+                <!-- <div class="square"><i class="bi bi-heart"></i></div> -->
             </div>
             <div class="photo-container" data-bs-toggle="modal" 
                 data-bs-target="#exampleModal">
                 <div class="photo">1</div>
-                <div class="square"><i class="bi bi-heart"></i></div>
+                <!-- <div class="square"><i class="bi bi-heart"></i></div> -->
+            </div>
+            <div class="photo-container" 
+                data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <div class="photo">1</div>
+                <!-- <div class="square"><i class="bi bi-heart"></i></div> -->
+            </div>
+            <div class="photo-container" 
+                data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <div class="photo">1</div>
+                <!-- <div class="square"><i class="bi bi-heart"></i></div> -->
+            </div>
+            <div class="photo-container" data-bs-toggle="modal" 
+                data-bs-target="#exampleModal">
+                <div class="photo">1</div>
+                <!-- <div class="square"><i class="bi bi-heart"></i></div> -->
+            </div>
+            <div class="photo-container" 
+                data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <div class="photo">1</div>
+                <!-- <div class="square"><i class="bi bi-heart"></i></div> -->
+            </div>
+            <div class="photo-container" 
+                data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <div class="photo">1</div>
+                <!-- <div class="square"><i class="bi bi-heart"></i></div> -->
+            </div>
+            <div class="photo-container" data-bs-toggle="modal" 
+                data-bs-target="#exampleModal">
+                <div class="photo">1</div>
+                <!-- <div class="square"><i class="bi bi-heart"></i></div> -->
             </div>
         </div>
     </div>
@@ -197,62 +215,49 @@
     </div>
     <script src="public/assets/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Randomly position photos within the box
+        // Randomly vị trí photos 
         const boxContainer = document.querySelector('.box-container');
         const box = document.getElementById('box');
         const photo_container = document.querySelectorAll('.photo-container');
         const photo = document.querySelectorAll('.photo');
         //Modal
         const photoModal = document.querySelector('#exampleModal');
-        //Khai báo
+        //Khai báo kích thướt của thẻ box
         const boxWidth = box.offsetWidth;
         const boxHeight = box.offsetHeight;
         // Array of translateZ values
         const translateZValues = [50, 100, 150]; 
         for (let i = 0; i < photo_container.length; i++) {
-            // 200 is the width of the photo
+            // Giới hạn width, height = 200px
             const translateX = Math.random() * (boxWidth - 200); 
-            // 200 is the height of the photo
             const translateY = Math.random() * (boxHeight - 200); 
             // Random translateZ from 0 to 200
             //const translateZ = Math.random() * 200; 
-            // Random zIndex from 1 to 3
-            const zIndex = Math.floor(Math.random() * 2) + 1; 
-            let translateZ;
             let color;
-            // Randomly choose translateZ and set color based on the chosen value
+            // Randim vị trí và màu
             const randomValue = Math.random();
-            if (randomValue < 0.33) {
-                translateZ = 50;
-                photo[i].classList.add('color1');
-                // color = 'yellow'; // Yellow for translateZ = 50px
-            } else if (randomValue < 0.66) {
-                translateZ = 100;
-                photo[i].classList.add('color2');
-                // color = 'blue'; // Blue for translateZ = 100px
-            } else {
-                translateZ = 150;
-                photo[i].classList.add('color3');
-                // color = 'red'; // Red for translateZ = 150px
-            }
+            const colorClasses = ['color1', 'color2', 'color3'];
+            const translateZValues = [50, 100, 150];
+            // 3 là số lượng phần tử trong mảng
+            const index = Math.floor(randomValue * 3); 
+            const translateZ = translateZValues[index];
+            const colorClass = colorClasses[index];
+
+            photo[i].classList.add(colorClass);
             photo_container[i].style.transform 
             = `translate3d(${translateX}px, ${translateY}px, ${translateZ}px)`;
-            photo_container[i].style.zIndex = zIndex;
-            photo[i].style.backgroundColor = color; // Apply color to photo element
-
-            // Add event listeners for mouseover and mouseout
-            photo_container[i].addEventListener('mouseover', function () {
-                // Set scale to enlarge when hovered
+            // Thêm sự kiện mouseover and mouseout
+            photo_container[i].addEventListener('mouseenter', function () {
+                //Set vị trí translateZ = 200px và scale
                 this.style.transform 
                 = `translate3d(${translateX}px, ${translateY}px, ${200}px) scale(1.2)`;
-                this.style.zIndex = 9999; // Set a higher z-index when hovered
+                photo[i].style.backgroundColor = '#fff';
             });
-            photo_container[i].addEventListener('mouseout', function () {
-                // Reset scale when mouseout
-                // Revert back to original z-index when mouseout
+            photo_container[i].addEventListener('mouseleave', function () {
+                // Reset 
                 this.style.transform 
                 = `translate3d(${translateX}px, ${translateY}px, ${translateZ}px) scale(1)`;
-                this.style.zIndex = zIndex; 
+                photo[i].style.backgroundColor = '';
             });
         }
         //Modal
@@ -262,6 +267,14 @@
         photoModal.addEventListener('show.bs.modal', event => {
             boxContainer.style.top = '130%';
         })
+        boxContainer.addEventListener('mousemove', (e) => {
+            const rect = boxContainer.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width - 0.5;
+            const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+            box.style.transform = `rotateY(${x * 30}deg) rotateX(${-y * 30}deg)`;
+        });
+
     </script>
 </body>
 </html>

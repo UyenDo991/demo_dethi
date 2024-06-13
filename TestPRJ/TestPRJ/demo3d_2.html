@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cha {
+            width: 300px;
+            height: 300px;
+            border: 2px solid #000;
+            perspective: 500px;
+            margin: 200px auto;
+        }
+
+        .box {
+            width: 300px;
+            height: 300px;
+            background: orangered;
+            transition: 1s;
+            transform-style: preserve-3d;
+        }
+
+        .hover {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+
+        .left {
+            clip-path: polygon(0 0, 0 100%, 50% 50%);
+        }
+
+        .right {
+            clip-path: polygon(100% 0, 100% 100%, 50% 50%);
+        }
+        .top {
+            clip-path: polygon(0 0, 100% 0, 50% 50%);
+        }
+        .bottom {
+            clip-path: polygon(0 100%, 100% 100%, 50% 50%);
+        }
+
+        .left:hover~.box {
+            transform: rotateY(45deg);
+        }
+
+        .right:hover~.box {
+            transform: rotateY(-45deg);
+        }
+        .top:hover~.box {
+            transform: rotateX(-45deg);
+        }
+        .bottom:hover~.box {
+            transform: rotateX(45deg);
+        }
+    
+        .face-left {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            background: greenyellow;
+            transform: rotateY(-90deg) translateZ(50px);
+        }
+        .face-right {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 100px;
+            background: greenyellow;
+            transform: rotateY(90deg) translateZ(50px);
+        }
+        .face-front {
+            position: absolute;
+            inset: 0;
+            background: blue;
+            transform: translateZ(50px);
+            opacity: .5;
+        }
+        .face-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: palevioletred;
+            transform: rotateX(90deg) translateZ(50px);
+        }
+        .face-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: palevioletred;
+            transform: rotateX(-90deg) translateZ(50px);
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="cha">
+        <div class="hover left"></div>
+        <div class="hover right"></div>
+        <div class="hover top"></div>
+        <div class="hover bottom"></div>
+        <div class="box">
+            <div class="face-left">LEFT</div>
+            <div class="face-right">RIGHT</div>
+            <div class="face-front">FRONT</div>
+            <div class="face-top">TOP</div>
+            <div class="face-bottom">BOTTOM</div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

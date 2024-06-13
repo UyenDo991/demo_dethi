@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: url(intro/background.jpeg);
+        }
+
+        .cha {
+            width: 500px;
+            height: 350px;
+            perspective: 500px;
+            margin: 200px auto;
+        }
+
+        .box {
+            width: 500px;
+            height: 350px;
+            background: rgba(255, 255, 255, .5);
+            border: 1px solid #fff;
+            box-shadow: 0 0 15px #fff;
+            border-radius: 20px;
+            transition: .2s;
+            transform-style: preserve-3d;
+        }
+
+        .hover {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+
+        .left {
+            clip-path: polygon(0 33%, 0 66%, 50% 50%);
+        }
+
+        .right {
+            clip-path: polygon(100% 33%, 100% 66%, 50% 50%);
+        }
+        .top {
+            clip-path: polygon(33% 0, 66% 0, 50% 50%);
+        }
+        .bottom {
+            clip-path: polygon(33% 100%, 66% 100%, 50% 50%);
+        }
+        .top-left {
+            clip-path: polygon(0 0, 33% 0, 50% 50%, 0 33%);
+        }
+        .top-right {
+            clip-path: polygon(100% 0, 100% 33%, 50% 50%, 66% 0);
+        }
+        .bottom-left {
+            clip-path: polygon(0 100%, 0 66%, 50% 50%, 33% 100%);
+        }
+        .bottom-right {
+            clip-path: polygon(100% 100%, 100% 66%, 50% 50%, 66% 100%);
+        }
+
+        .left:hover~.box {
+            transform: rotateY(45deg);
+        }
+
+        .right:hover~.box {
+            transform: rotateY(-45deg);
+        }
+        .top:hover~.box {
+            transform: rotateX(-45deg);
+        }
+        .bottom:hover~.box {
+            transform: rotateX(45deg);
+        }
+    
+        .top-left:hover~.box {
+            transform: rotateX(-45deg) rotateY(45deg);
+        }
+    
+        .top-right:hover~.box {
+            transform: rotateX(-45deg) rotateY(-45deg);
+        }
+        .bottom-right:hover~.box {
+            transform: rotateX(45deg) rotateY(-45deg);
+        }
+        .bottom-left:hover~.box {
+            transform: rotateX(45deg) rotateY(45deg);
+        }
+    
+        
+        .face-front {
+            position: absolute;
+            inset: 0;
+        }
+        .logo-1 {
+            transform: translateZ(50px) scale(.9);
+         }
+        .logo-2 {
+            transform: translateZ(100px) scale(.8);
+         }
+        .logo-3 {
+            transform: translateZ(150px) scale(.7) translateY(120px);
+         }
+        
+    </style>
+</head>
+<body>
+    <div class="cha">
+        <div class="hover left"></div>
+        <div class="hover right"></div>
+        <div class="hover top"></div>
+        <div class="hover bottom"></div>
+        <div class="hover top-left"></div>
+        <div class="hover top-right"></div>
+        <div class="hover bottom-left"></div>
+        <div class="hover bottom-right"></div>
+        <div class="box">
+            <img src="intro/logo_back.svg" alt="" class="face-front logo-1">
+            <img src="intro/logo_front.svg" alt="" class="face-front logo-2">
+            <img src="intro/logo_text.svg" alt="" class="face-front logo-3">
+        </div>
+    </div>
+</body>
+</html>

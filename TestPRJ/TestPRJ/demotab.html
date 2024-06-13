@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[name="info"] {display: none;}
+        label {
+            display: inline-block;
+            border: 2px solid #ddd;
+            border-bottom: none;
+            padding: 10px;
+            background: #fff;
+        }
+        input[name="info"]:checked + label { border-color: orangered; transform: translateY(2px); }
+        input[name="info"]:checked + label + .info-content {
+            display: block;
+        }
+        .information {
+            position: relative;
+            border-bottom: 2px solid orangered;
+
+        }
+        .info-content {
+            display: none;
+            position: absolute;
+            inset: 0;
+            top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="information">
+        <input type="radio" name="info" id="info-1" checked>
+        <label for="info-1">Thông tin 1</label>
+        <div class="info-content">
+            <h3>Thông tin 1</h3>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis, ullam consequuntur officiis deserunt maxime numquam facilis in dolorum optio accusantium dignissimos nemo adipisci eius eligendi dolores ratione aperiam quidem vero. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis voluptates odio hic tempora explicabo architecto culpa iste voluptatum minima libero ut vero velit sit similique id, necessitatibus, natus dolore recusandae!
+        </div>
+
+        <input type="radio" name="info" id="info-2">
+        <label for="info-2">Thông tin 2</label>
+        <div class="info-content">
+            <h3>Thông tin 2</h3>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis, ullam
+        </div>
+
+        <input type="radio" name="info" id="info-3">
+        <label for="info-3">Thông tin 3</label>
+        <div class="info-content">
+            <h3>Thông tin 3</h3>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis, ullam consequuntur officiis deserunt maxime numquam facilis in dolorum optio.
+        </div>
+
+        <input type="radio" name="info" id="info-4">
+        <label for="info-4">Thông tin 4</label>
+        <div class="info-content">
+            <h3>Thông tin 4</h3>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis, ullam consequuntur officiis deserunt maxime numquam facilis in dolorum optio accusantium dignissimos nemo adipisci eius eligendi dolores ratione aperiam quidem vero. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex dolorum doloremque re.
+        </div>
+    </div>
+    
+</body>
+</html>
