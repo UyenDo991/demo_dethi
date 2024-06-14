@@ -2,7 +2,6 @@
 body {
     background: url(../../intro/background.jpeg);
 }
-
 .cha {
     width: 500px;
     height: 350px;
@@ -13,7 +12,6 @@ body {
     padding: 10px;
     position: relative;
 }
-
 .box {
     width: 100%;
     height: 100%;
@@ -25,83 +23,66 @@ body {
     transform-style: preserve-3d;
     position: relative;
 }
-
 .hover {
     position: absolute;
     inset: 0;
     z-index: 1;
     pointer-events: none; /* Bỏ qua sự kiện chuột */
 }
-
 .left {
     clip-path: polygon(0 33%, 0 66%, 50% 50%);
 }
-
 .right {
     clip-path: polygon(100% 33%, 100% 66%, 50% 50%);
 }
-
 .top {
     clip-path: polygon(33% 0, 66% 0, 50% 50%);
 }
-
 .bottom {
     clip-path: polygon(33% 100%, 66% 100%, 50% 50%);
 }
-
 .top-left {
     clip-path: polygon(0 0, 33% 0, 50% 50%, 0 33%);
 }
-
 .top-right {
     clip-path: polygon(100% 0, 100% 33%, 50% 50%, 66% 0);
 }
-
 .bottom-left {
     clip-path: polygon(0 100%, 0 66%, 50% 50%, 33% 100%);
 }
-
 .bottom-right {
     clip-path: polygon(100% 100%, 100% 66%, 50% 50%, 66% 100%);
 }
-
 .left:hover~.box {
     transform: rotateY(45deg);
 }
-
 .right:hover~.box {
     transform: rotateY(-45deg);
 }
-
 .top:hover~.box {
     transform: rotateX(-45deg);
 }
-
 .bottom:hover~.box {
     transform: rotateX(45deg);
 }
-
 .top-left:hover~.box {
     transform: rotateX(-45deg) rotateY(45deg);
 }
-
 .top-right:hover~.box {
     transform: rotateX(-45deg) rotateY(-45deg);
 }
-
 .bottom-right:hover~.box {
     transform: rotateX(45deg) rotateY(-45deg);
 }
-
 .bottom-left:hover~.box {
     transform: rotateX(45deg) rotateY(45deg);
 }
-
 .small-box {
     width: 50px;
     height: 50px;
     background-color: rgba(255, 255, 255, 1);
     position: absolute;
     transition: transform 0.3s, background-color 0.3s;
-    cursor: pointer; /* Đảm bảo con trỏ chuột thay đổi khi hover */
+    /* Đảm bảo con trỏ chuột thay đổi khi hover */
+    cursor: pointer; 
 }
